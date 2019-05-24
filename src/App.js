@@ -11,19 +11,25 @@ class App extends Component {
         {name: "Shaimaa"},
         {name: "Mohamed"},
         {name: "Ahmed"},
-      ]
+      ],
+      current: ""
   }
 
   updateContact= (e)=>{
-     console.log(e.target.value);
-     
+      this.setState(
+        {current : e.target.value}
+      )     
   }
   
 
   AddContact = (e)=>{
     e.preventDefault();
-    console.log("contact");
-    
+    let current = this.state.current;
+    let contacts = this.state.contacts;
+    contacts.push({
+      name: current
+    },)   
+    this.setState({contacts,current:''});
   }
 
   render() {
@@ -34,7 +40,7 @@ class App extends Component {
     return (
       <section>
         <h2>Contact List</h2>
-        <ContactAdd update={this.updateContact} AddContact={this.AddContact}/>
+        <ContactAdd current={this.state.current} update={this.updateContact} AddContact={this.AddContact}/>
         <ul>{contactList}</ul>
       </section>
     );
