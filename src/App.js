@@ -32,10 +32,16 @@ class App extends Component {
     this.setState({contacts,current:''});
   }
 
+  deleteContact = (index) => {
+      let contacts = this.state.contacts;
+      contacts.splice(index,1);
+      this.setState({contacts})
+  }
+
   render() {
     const {contacts} = this.state;
     const contactList = contacts.map((contact,index) => {
-        return <ContactList detail={contact} key={index}/>
+        return <ContactList detail={contact} key={index} index={index} deleteContact={this.deleteContact}/>
     })
     return (
       <section>
