@@ -1,10 +1,11 @@
 import React from 'react';
 
-const ContactAdd = () => {
+const ContactAdd = (props) => {
     return (
-        <div>
-            form
-        </div>
+        <form onSubmit={props.AddContact}>
+            <input type="text" onChange={props.update}></input>
+            <input type="submit" value="Add Contact"></input>
+        </form>
     );
 };
 

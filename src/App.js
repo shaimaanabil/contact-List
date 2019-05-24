@@ -14,6 +14,18 @@ class App extends Component {
       ]
   }
 
+  updateContact= (e)=>{
+     console.log(e.target.value);
+     
+  }
+  
+
+  AddContact = (e)=>{
+    e.preventDefault();
+    console.log("contact");
+    
+  }
+
   render() {
     const {contacts} = this.state;
     const contactList = contacts.map((contact,index) => {
@@ -22,7 +34,7 @@ class App extends Component {
     return (
       <section>
         <h2>Contact List</h2>
-        <ContactAdd/>
+        <ContactAdd update={this.updateContact} AddContact={this.AddContact}/>
         <ul>{contactList}</ul>
       </section>
     );
