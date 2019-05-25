@@ -29,11 +29,17 @@ class App extends Component {
   AddContact = (e)=>{
     e.preventDefault();
     let current = this.state.current;
-    let contacts = this.state.contacts;
-    contacts.push({
-      name: current
-    },)   
-    this.setState({contacts,current:''});
+    if(current === ""){
+      return false
+    }
+    else{
+      let contacts = this.state.contacts;
+      contacts.push({
+        name: current
+      },)   
+      this.setState({contacts,current:''});
+    }
+
   }
 
   /* AddContact function takes event object and gets the current key which contains the 
@@ -67,10 +73,10 @@ class App extends Component {
   render() {
     const {contacts} = this.state;
     const contactList = contacts.map((contact,index) => {
-        return <ContactList detail={contact} key={index} index={index} deleteContact={this.deleteContact} editContact={this.editContact}/>
+        return <ContactList contacts={contacts} detail={contact} key={index} index={index} deleteContact={this.deleteContact} editContact={this.editContact}/>
     })
     return (
-      <section>
+      <section className="App">
         <h2>Contact List</h2>
         <ContactAdd current={this.state.current} update={this.updateContact} AddContact={this.AddContact}/>
         <ul>{contactList}</ul>

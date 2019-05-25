@@ -8,14 +8,20 @@ class ContactList extends Component {
 
 
     renderContacts = () => {
-        return(
-            <li>
-                <span>{this.props.detail.name}</span> 
-                <button onClick={() => {this.toggleState()}}>Edit Contact</button>
-                <button onClick={ () =>{this.props.deleteContact(this.props.index)}}>Delete Contact</button>
-            </li>
-        )
-    
+        let {contacts}= this.props;
+        let contactsLength= contacts.length;
+        const ListContact = contactsLength ? ( contacts.map(contact =>{
+            return(
+                <li>
+                    <span>{this.props.detail.name}</span> 
+                    <button onClick={() => {this.toggleState()}}>Edit Contact</button>
+                    <button onClick={ () =>{this.props.deleteContact(this.props.index)}}>Delete Contact</button>
+                </li>
+            )
+        })) : (<p>there is no contacts to show</p>)
+
+         
+         
     }
 
     // renderContacts function renders contacts and two buttons Edit and Delete
