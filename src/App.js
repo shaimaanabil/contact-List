@@ -8,9 +8,9 @@ class App extends Component {
 
   state={
       contacts: [
-        {name: "Shaimaa : 01060464622 "},
-        {name: "Mohamed : 01066843161"},
-        {name: "Ahmed : 01010010363"},
+        {name: "Shaimaa : 010000000000 "},
+        {name: "Mohamed : 018888888888"},
+        {name: "Ahmed : 01777777777"},
       ],
       current: ""
   }

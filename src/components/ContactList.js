@@ -8,9 +8,9 @@ class ContactList extends Component {
 
 
     renderContacts = () => {
-        let {contacts}= this.props;
-        let contactsLength= contacts.length;
-        const ListContact = contactsLength ? ( contacts.map(contact =>{
+        // let {contacts}= this.props;
+        // let contactsLength= contacts.length;
+        // const ListContact = contactsLength ? ( contacts.map(contact =>{
             return(
                 <li>
                     <span>{this.props.detail.name}</span> 
@@ -18,7 +18,7 @@ class ContactList extends Component {
                     <button onClick={ () =>{this.props.deleteContact(this.props.index)}}>Delete Contact</button>
                 </li>
             )
-        })) : (<p>there is no contacts to show</p>)
+        // })) : (<p>there is no contacts to show</p>)
 
          
          
