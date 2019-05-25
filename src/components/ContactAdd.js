@@ -9,4 +9,8 @@ const ContactAdd = (props) => {
     );
 };
 
+    /* ContactAdd component takes props and returns a form and button
+        Add Contact
+    */
+
 export default ContactAdd;
