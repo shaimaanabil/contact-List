@@ -38,10 +38,19 @@ class App extends Component {
       this.setState({contacts})
   }
 
+  editContact = (index,value) => { 
+    let contacts = this.state.contacts;
+    let contact = contacts[index];
+    contact['name'] = value;
+    this.setState({
+      contacts
+    })
+  }
+
   render() {
     const {contacts} = this.state;
     const contactList = contacts.map((contact,index) => {
-        return <ContactList detail={contact} key={index} index={index} deleteContact={this.deleteContact}/>
+        return <ContactList detail={contact} key={index} index={index} deleteContact={this.deleteContact} editContact={this.editContact}/>
     })
     return (
       <section>
