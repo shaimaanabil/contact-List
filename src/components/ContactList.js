@@ -33,11 +33,9 @@ class ContactList extends Component {
     renderUpdateContacts = () => {
         return(
             <form onSubmit={this.updateContentItem}>
-                <input type="text" ref={(v) =>{this.input.v}} defaultValue= {this.props.detail.name}/>
+                <input type="text" ref= { (v) =>{this.input=v} } defaultValue= {this.props.detail.name}/>
                 <button>Update Contact</button>
-            </form>
-        )
-    }
+            </form>)}
 
 
     render() {
